@@ -37,7 +37,7 @@ void UIEngineBridge::RenderToEngineViewport(const UIDrawData& data, void* imDraw
         } else if (item.Flags & UIFlagTextured) {
             ImVec2 uv0(item.Source.Left, item.Source.Top);
             ImVec2 uv1(item.Source.Right(), item.Source.Bottom());
-            drawList->AddImage(reinterpret_cast<ImTextureID>(item.ColorFinish), pMin, pMax, uv0, uv1, item.ColorStart);
+            drawList->AddImage((ImTextureID)(uintptr_t)item.ImageHandle, pMin, pMax, uv0, uv1, item.ColorStart);
         } else if (item.Flags & UIFlagGradient) {
             drawList->AddRectFilledMultiColor(pMin, pMax, item.ColorStart, item.ColorFinish, item.ColorFinish, item.ColorStart);
         } else {

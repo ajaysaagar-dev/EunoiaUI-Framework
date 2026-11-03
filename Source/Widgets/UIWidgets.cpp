@@ -30,9 +30,9 @@ void UIWidgets::Faint(const char* message) {
 
 void UIWidgets::Heading(const char* message) {
     if (!message) return;
-    UIVector size = Heading->Measure(message);
+    UIVector size = ::EunoiaUI::Heading->Measure(message);
     UIRectangle rect = Layout->Place(UIVector(size.Horizontal, Style->TitleHeight));
-    Canvas->Text(Heading.get(), message, rect.Origin() + UIVector(0.0f, (rect.Height - Heading->LineHeight()) * 0.5f), Style->Text);
+    Canvas->Text(::EunoiaUI::Heading.get(), message, rect.Origin() + UIVector(0.0f, (rect.Height - ::EunoiaUI::Heading->LineHeight()) * 0.5f), Style->Text);
 }
 
 void UIWidgets::Section(const char* message) {

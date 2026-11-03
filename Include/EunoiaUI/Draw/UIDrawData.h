@@ -26,6 +26,7 @@ public:
 
     unsigned int ColorStart = 0xFFFFFFFF;
     unsigned int ColorFinish = 0xFFFFFFFF;
+    unsigned long long ImageHandle = 0;
 
     float Rounding = 0.0f;
     float Thickness = 0.0f;

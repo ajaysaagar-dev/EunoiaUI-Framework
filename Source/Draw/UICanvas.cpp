@@ -81,7 +81,9 @@ void UICanvas::AddInstance(const UIInstance& item, unsigned long long image) {
         ch.Marks.push_back(b);
     }
 
-    ch.Items.push_back(item);
+    UIInstance copy = item;
+    copy.ImageHandle = image;
+    ch.Items.push_back(copy);
 }
 
 void UICanvas::Rectangle(const UIRectangle& bounds, const UIColor& fill, float rounding) {
